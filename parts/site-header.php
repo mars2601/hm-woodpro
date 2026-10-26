@@ -23,7 +23,7 @@ use function HM\Core\icon;
 				'container'      => false,
 				'menu_class'     => 'site-nav__list',
 				'fallback_cb'    => false,
-				'depth'          => 2,
+				'depth'          => 3,
 			] );
 			?>
 		</nav>
