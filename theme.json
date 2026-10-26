@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"version": 3,
+	"settings": {
+		"color": {
+			"palette": [
+				{ "slug": "black", "name": "Black", "color": "#000000" },
+				{ "slug": "white", "name": "White", "color": "#ffffff" },
+				{ "slug": "grey-light", "name": "Grey light (surfaces)", "color": "#f2f2f2" },
+				{ "slug": "grey-line", "name": "Grey line", "color": "#e2e2e2" },
+				{ "slug": "grey", "name": "Grey (logo)", "color": "#777777" },
+				{ "slug": "grey-dark", "name": "Grey dark", "color": "#202020" },
+				{ "slug": "orange", "name": "Orange (logo)", "color": "#f96c03" },
+				{ "slug": "red", "name": "Red", "color": "#d80f42" },
+				{ "slug": "burgundy", "name": "Burgundy (logo)", "color": "#7e0607" }
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"slug": "primary",
+					"name": "Work Sans",
+					"fontFamily": "\"Work Sans\", system-ui, sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Work Sans",
+							"fontStyle": "normal",
+							"fontWeight": "100 900",
+							"fontDisplay": "swap",
+							"src": [ "file:./assets/fonts/WorkSans-Variable.woff2" ]
+						},
+						{
+							"fontFamily": "Work Sans",
+							"fontStyle": "italic",
+							"fontWeight": "100 900",
+							"fontDisplay": "swap",
+							"src": [ "file:./assets/fonts/WorkSans-Variable-Italic.woff2" ]
+						}
+					]
+				}
+			]
+		}
+	}
+}

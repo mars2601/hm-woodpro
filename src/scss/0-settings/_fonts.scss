@@ -1,0 +1,48 @@
+// ---------
+// 0-settings
+// Fonts: families from theme.json (--wp--preset--font-family--*). 1rem = 10px on large screens.
+
+@use "tools/media-queries" as media-queries;
+
+html {
+	font-size: 8.5px;
+	@include media-queries.mq(medium) {
+		font-size: 9px;
+	}
+	@include media-queries.mq(large) {
+		font-size: 10px;
+	}
+}
+
+// Headings: √φ scale (×1.272) from the 1.6rem body size; every second step is ×φ.
+:root {
+	--font-size-h6: 1.6rem;
+	--font-size-h5: 2.04rem;
+	--font-size-h4: 2.59rem;
+	--font-size-h3: 3.29rem;
+	--font-size-h2: 4.19rem;
+	--font-size-h1: 5.33rem;
+}
+
+body {
+	font-family: var(--wp--preset--font-family--primary);
+	font-size: 1.6rem;
+	line-height: 1.618;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: var(--font-size-h4); line-height: 1.3; }
+h5 { font-size: var(--font-size-h5); line-height: 1.4; }
+h6 { font-size: var(--font-size-h6); line-height: 1.4; }

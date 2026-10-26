@@ -1,0 +1,21 @@
+{
+  "name": "woodpro",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Woodpro, child theme of HM Starter.",
+  "author": "Marcel Pirnay <hello@marcel-pirnay.be>",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "wp-scripts build",
+    "watch": "wp-scripts start",
+    "start": "npm run watch & SITE=woodpro ../../../node_modules/.bin/browser-sync start --config ../../../bs-config.js; wait",
+    "lint:js": "wp-scripts lint-js src",
+    "lint:css": "wp-scripts lint-style 'src/**/*.scss'"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^31.0.0"
+  }
+}

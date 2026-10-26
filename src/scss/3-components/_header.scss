@@ -1,0 +1,196 @@
+// ---------
+// 3-components
+// Header: reads only the --header-* tokens; page themes set them in 0-settings/_themes.scss.
+
+
+:root {
+	--header-bg: var(--color-white);
+	--header-fg: var(--color-black);
+	--header-border: var(--color-grey-line);
+	--header-accent: var(--color-grey);
+	--header-height: 7.2rem;
+}
+
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background-color: var(--header-bg);
+	color: var(--header-fg);
+	border-bottom: 1px solid var(--header-border);
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--default-space);
+		height: var(--header-height);
+	}
+
+	&__brand {
+		display: flex;
+		align-items: center;
+		height: 4rem;
+		color: inherit;
+		text-decoration: none;
+
+		svg {
+			height: 3rem;
+			width: auto;
+		}
+		// The grey letters follow the header colour (white on dark); the orange "d" stays.
+		svg :where(path[fill="#777777"]) {
+			fill: var(--header-logo, #777777);
+		}
+	}
+
+	&__name {
+		font-size: 2rem;
+		font-weight: 600;
+	}
+
+	&__burger {
+		display: flex;
+		padding: 0;
+		border: 0;
+		background: none;
+		color: inherit;
+		cursor: pointer;
+
+		svg {
+			width: 3.2rem;
+			height: 3.2rem;
+		}
+		path {
+			stroke: currentColor;
+		}
+	}
+}
+
+.site-nav {
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			&:hover,
+			&:focus-visible {
+				color: var(--header-accent);
+			}
+		}
+
+		// "Votre projet": add the CSS class `is-cta` to the menu item (Appearance › Menus).
+		.is-cta > a {
+			display: inline-flex;
+			align-items: center;
+			height: 3.2rem;
+			padding: 0 1.4rem;
+			border-radius: 999px;
+			background-color: var(--header-fg);
+			color: var(--header-bg);
+			font-weight: 500;
+
+			&:hover,
+			&:focus-visible {
+				color: var(--header-bg);
+				opacity: .85;
+			}
+		}
+
+		.current-menu-item > a,
+		.current-menu-ancestor > a {
+			text-decoration: underline;
+			text-underline-offset: .6rem;
+		}
+
+		.sub-menu {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+	}
+}
+
+// Mobile: panel under the header, opened by the burger (src/js/modules/menu.js).
+@media (max-width: 1023px) {
+	.site-nav {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		max-height: calc(100dvh - var(--header-height));
+		overflow-y: auto;
+		padding: var(--default-space) var(--responsive-space, 1.6rem);
+		background-color: var(--header-bg);
+		border-bottom: 1px solid var(--header-border);
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-.8rem);
+		transition: opacity .2s ease, transform .2s ease, visibility 0s .2s;
+
+		.site-header.is-open & {
+			opacity: 1;
+			visibility: visible;
+			transform: none;
+			transition: opacity .2s ease, transform .2s ease;
+		}
+
+		&__list {
+			display: flex;
+			flex-direction: column;
+			gap: var(--default-space-s);
+			font-size: 2.4rem;
+
+			.sub-menu {
+				margin-top: var(--default-space-xs);
+				padding-left: var(--default-space);
+				font-size: 1.8rem;
+			}
+		}
+	}
+}
+
+// Desktop: inline menu, sub-menus on hover/focus.
+@media (min-width: 1024px) {
+	.site-header__burger {
+		display: none;
+	}
+
+	.site-nav__list {
+		display: flex;
+		align-items: center;
+		gap: var(--default-space-l);
+		font-size: 1.4rem;
+
+		> li {
+			position: relative;
+		}
+
+		.sub-menu {
+			position: absolute;
+			top: 100%;
+			left: -1.6rem;
+			min-width: 20rem;
+			padding: 1.2rem 1.6rem;
+			background-color: var(--header-bg);
+			border: 1px solid var(--header-border);
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity .15s ease, visibility 0s .15s;
+
+			li + li {
+				margin-top: .8rem;
+			}
+		}
+
+		li:is(:hover, :focus-within) > .sub-menu {
+			opacity: 1;
+			visibility: visible;
+			transition: opacity .15s ease;
+		}
+	}
+}

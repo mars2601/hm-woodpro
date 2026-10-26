@@ -1,0 +1,31 @@
+// ---------
+// 3-components
+// Fields: Woodpro look for hm-core's form fields (structure and behaviour in hm-core/src/fields,
+// tokens documented at the top of hm-core/src/fields/fields.scss). Labels above the fields:
+// 'field_labels' => 'static' in inc/config.php. Boxed, fully rounded, white on grey surfaces.
+
+:root {
+	--field-color: var(--color-black);
+	--field-line: var(--color-grey-line);
+	--field-accent: var(--color-black);
+	--field-filled-bg: var(--color-white);
+	--field-error: var(--color-red);
+	--field-font: var(--wp--preset--font-family--primary);
+	--field-dropdown-bg: var(--color-white);
+	--field-dropdown-color: var(--color-black);
+	--field-gap: 1.6rem;
+
+	--field-border: 1px solid var(--color-grey-line);
+	--field-border-bottom: 1px solid var(--color-grey-line);
+	--field-radius: 999px;
+	--field-bg: var(--color-white);
+	--field-padding: 1rem 1.8rem;
+	--field-control-gap: .8rem;
+	--field-label-size: 1.4rem;
+	--field-label-weight: 500;
+}
+
+// Textareas: rounded corners, not a pill.
+.field--textarea {
+	--field-radius: 1.6rem;
+}

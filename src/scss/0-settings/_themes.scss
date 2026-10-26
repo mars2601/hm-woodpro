@@ -1,0 +1,36 @@
+// ---------
+// 0-settings
+// Themes: the ONLY place that knows the colour themes. Components read tokens
+// (--header-*, --field-*, --btn-*), themes set them.
+// - page themes: body class `theme-{name}` (hm_starter/page_theme, inc/config.php)
+// - block themes: `theme--{name}` (hm/config themes, chosen per block in the editor)
+
+body {
+	background-color: var(--color-white);
+	color: var(--color-black);
+}
+
+/* Block themes
+========================================================================== */
+.theme--dark {
+	background-color: var(--color-black);
+	color: var(--color-white);
+	--field-color: var(--color-white);
+	--btn-primary-bg: var(--color-white);
+	--btn-primary-bg-hover: var(--color-grey-light);
+	--btn-primary-color: var(--color-black);
+}
+
+.theme--light {
+	background-color: var(--color-grey-light);
+	color: var(--color-black);
+}
+
+/* Page themes (header colours)
+========================================================================== */
+.theme-dark {
+	--header-bg: var(--color-black);
+	--header-fg: var(--color-white);
+	--header-border: rgb(255 255 255 / .15);
+	--header-logo: var(--color-white);
+}

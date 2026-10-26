@@ -1,0 +1,19 @@
+// ---------
+// 0-settings
+// Colours: theme.json palette (--wp--preset--color--*) aliased as --color-*, the names used in the SCSS.
+// From the Figma (Woodpro) and the logo: black/white UI, grey surfaces, orange → red → burgundy accents.
+
+:root {
+	--color-black: var(--wp--preset--color--black);
+	--color-white: var(--wp--preset--color--white);
+	--color-grey-light: var(--wp--preset--color--grey-light);
+	--color-grey-line: var(--wp--preset--color--grey-line);
+	--color-grey: var(--wp--preset--color--grey);
+	--color-grey-dark: var(--wp--preset--color--grey-dark);
+	--color-orange: var(--wp--preset--color--orange);
+	--color-red: var(--wp--preset--color--red);
+	--color-burgundy: var(--wp--preset--color--burgundy);
+
+	// Logo gradient (the "d"), for accents: checks, active step…
+	--gradient-brand: linear-gradient(135deg, var(--color-orange), var(--color-red) 55%, var(--color-burgundy));
+}

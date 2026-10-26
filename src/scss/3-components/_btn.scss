@@ -1,0 +1,27 @@
+// ---------
+// 3-components
+// Buttons: structure and variants from hm-starter (components/_btn.scss); Woodpro sets the tokens.
+// Black pills; white pills on dark sections (0-settings/_themes.scss).
+
+:root {
+	--btn-height: 4.4rem;
+	--btn-height-small: 3.2rem;
+	--btn-padding-x: 2rem;
+	--btn-padding-x-small: 1.4rem;
+	--btn-radius: 999px;
+	--btn-border-width: 1px;
+
+	--btn-font-family: var(--wp--preset--font-family--primary);
+	--btn-font-size: 1.6rem;
+	--btn-font-size-small: 1.3rem;
+	--btn-font-weight: 500;
+
+	--btn-icon-size: 1.4rem;
+	--btn-icon-stroke-width: 1.5;
+
+	--btn-primary-bg: var(--color-black);
+	--btn-primary-bg-hover: var(--color-grey-dark);
+	--btn-primary-color: var(--color-white);
+	--btn-transparent-color: currentColor;
+	--btn-transparent-bg-hover: rgb(0 0 0 / .06);
+}
