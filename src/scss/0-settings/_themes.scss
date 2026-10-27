@@ -5,13 +5,17 @@
 // - page themes: body class `theme-{name}` (hm_starter/page_theme, inc/config.php)
 // - block themes: `theme--{name}` (hm/config themes, chosen per block in the editor)
 
+@use "tools/sections";
+
 body {
 	background-color: var(--color-white);
 	color: var(--color-black);
 }
 
-/* Block themes
+/* Block themes (spacing from hm-starter base/_sections.scss; colours here)
 ========================================================================== */
+@include sections.collapse("none", "dark", "light");
+
 .theme--dark {
 	background-color: var(--color-black);
 	color: var(--color-white);
