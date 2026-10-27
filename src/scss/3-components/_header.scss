@@ -15,6 +15,9 @@
 	--dropdown-color: var(--color-black);
 	--dropdown-border: 1px solid var(--color-grey-line);
 	--dropdown-radius: 1.2rem;
+	--dropdown-padding: 1.4rem;
+	--dropdown-gap: 0.8rem;
+	--dropdown-width: 22rem;
 	--dropdown-divider: rgb(255 255 255 / .35);
 	// Arrow (⌄) of text Items with SubItems = arrow of button Items (hm-starter --btn-icon-* tokens).
 	--dropdown-icon-size: var(--btn-icon-size-only);
@@ -123,7 +126,6 @@
 
 		.sub-menu {
 			margin: 0;
-			padding: 0;
 			list-style: none;
 		}
 	}
@@ -177,7 +179,7 @@
 			--dropdown-shadow: none;
 			--dropdown-bg: transparent;
 			--dropdown-color: inherit;
-			--dropdown-padding: .8rem;
+			--dropdown-padding: 0 0 0 var(--default-space); // SubItems indented under their Item
 			--dropdown-gap: 0px;
 			--dropdown-width: 0;
 		}
@@ -193,11 +195,11 @@
 	.site-nav__list {
 		display: flex;
 		align-items: center;
-		gap: var(--default-space-l);
 		font-size: 1.4rem;
 
 		> li {
 			position: relative;
+			padding: 0 var(--default-space-m);
 		}
 	}
 
@@ -211,8 +213,15 @@
 			padding: var(--default-space-m) 0;
 		}
 
-		.site-nav__list {
-			justify-content: center;
+		.site-nav, .site-nav__list{
+			width: 100%;
+			& > li{
+				flex: 1 1 0;
+				display: flex;
+				justify-content: center; 
+			}
 		}
+
+		
 	}
 }
