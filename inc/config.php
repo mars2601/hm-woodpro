@@ -14,9 +14,9 @@ add_filter( 'hm/config', function ( array $config ) {
 	];
 	$config['icons_path']   = 'assets/icons';
 	$config['field_labels'] = 'static'; // labels above the fields (Figma forms)
-	$config['dropdown_icon'] = 'carret-down'; // ⌄ on "Services", "Votre projet"… (hm-core menus)
+	$config['dropdown_icon'] = 'carret-down'; // ⌄ on Items with SubItems, text and button (hm-core menus)
 	$config['dropdown_open'] = 'hover';       // open dropdowns on hover (click still works, touch screens click)
-	$config['dropdown_morph'] = true;         // one box slides between Services / Mobilier / Entreprise
+	$config['dropdown_morph'] = true;         // one box slides from one Item's panel to the next
 	return $config;
 } );
 

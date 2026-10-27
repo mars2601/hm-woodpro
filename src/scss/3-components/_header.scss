@@ -16,7 +16,7 @@
 	--dropdown-border: 1px solid var(--color-grey-line);
 	--dropdown-radius: 1.2rem;
 	--dropdown-divider: rgb(255 255 255 / .35);
-	// ⌄ of "Mobilier", "Services"… = the one on the "Votre projet" button.
+	// Arrow (⌄) of text Items with SubItems = arrow of button Items (hm-starter --btn-icon-* tokens).
 	--dropdown-icon-size: var(--btn-icon-size-only);
 	--dropdown-icon-stroke: var(--btn-icon-stroke-width);
 }
@@ -93,11 +93,11 @@
 			}
 		}
 
-		// Buttons: add e.g. `btn btn--primary` (or `btn btn--small`) to the menu item's CSS Classes.
-		// hm-core (inc/Menus.php) renders it as a button; with sub-items, a dropdown button.
-		// The --btn-* / --btn-menu-* tokens style it, not the menu rules.
+		// Button Items: `btn` (+ modifiers) in the Item's CSS Classes; hm-core (inc/Menus.php) renders
+		// a button, or a dropdown button when the Item has SubItems. Styled by the --btn-* and
+		// --dropdown-* tokens, not by the menu rules.
 
-		// "Votre projet": add the CSS class `is-cta` to the menu item (Appearance › Menus).
+		// Call-to-action Item (older alternative to `btn`): CSS class `is-cta` on the Item.
 		.is-cta > a {
 			display: inline-flex;
 			align-items: center;
