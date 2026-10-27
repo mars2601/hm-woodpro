@@ -26,6 +26,34 @@ add_filter( 'hm/config', function ( array $config ) {
 add_filter( 'hm_starter/page_theme', fn() => 'default' );
 
 /**
+ * Header layout: 'horizontal' (logo left, menu right) or 'vertical' (logo, then menu under it).
+ * Desktop only; mobile keeps logo + burger. Class `site-header--{layout}` (parts/site-header.php).
+ * Set in Appearance › Customize › Header.
+ */
+add_filter( 'woodpro/header_layout', fn() => get_theme_mod( 'header_layout', 'horizontal' ) );
+
+add_action( 'customize_register', function ( \WP_Customize_Manager $wp_customize ) {
+	$wp_customize->add_section( 'woodpro_header', [
+		'title'    => __( 'Header', 'woodpro' ),
+		'priority' => 30,
+	] );
+	$wp_customize->add_setting( 'header_layout', [
+		'default'           => 'horizontal',
+		'sanitize_callback' => fn( $value ) => 'vertical' === $value ? 'vertical' : 'horizontal',
+	] );
+	$wp_customize->add_control( 'header_layout', [
+		'label'       => __( 'Layout', 'woodpro' ),
+		'description' => __( 'Desktop only: mobile always shows logo + burger.', 'woodpro' ),
+		'section'     => 'woodpro_header',
+		'type'        => 'radio',
+		'choices'     => [
+			'horizontal' => __( 'Horizontal (logo left, menu right)', 'woodpro' ),
+			'vertical'   => __( 'Vertical (logo, then menu)', 'woodpro' ),
+		],
+	] );
+} );
+
+/**
  * Storybook (hm-core): theme parts rendered by `npm run storybook:fixtures`
  * (site-header and site-footer are included by default). Stories: src/stories/.
  */

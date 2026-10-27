@@ -200,4 +200,19 @@
 			position: relative;
 		}
 	}
+
+	// Vertical: logo centred, menu centred under it.
+	.site-header--vertical {
+		.site-header__inner {
+			flex-direction: column;
+			justify-content: center;
+			gap: var(--default-space-s);
+			height: auto;
+			padding: var(--default-space-m) 0;
+		}
+
+		.site-nav__list {
+			justify-content: center;
+		}
+	}
 }

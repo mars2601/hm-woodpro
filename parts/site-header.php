@@ -1,12 +1,15 @@
 <?php
 /**
  * Site header: logo, primary menu (desktop), burger + panel (mobile).
+ * Layout: woodpro/header_layout filter (inc/config.php), horizontal or vertical.
  * Colours: --header-* tokens (src/scss/3-components/_header.scss, page themes in 0-settings/_themes.scss).
  */
 
 use function HM\Core\icon;
+
+$layout = 'vertical' === apply_filters( 'woodpro/header_layout', 'horizontal' ) ? 'vertical' : 'horizontal';
 ?>
-<header class="site-header">
+<header class="site-header site-header--<?php echo esc_attr( $layout ); ?>">
 	<div class="container site-header__inner">
 		<a class="site-header__brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Home', 'woodpro' ); ?>">
 			<?php if ( is_readable( get_theme_file_path( 'assets/images/logo.svg' ) ) ) : ?>
