@@ -6,14 +6,14 @@
 :root {
 	--header-bg: var(--color-white);
 	--header-fg: var(--color-black);
-	--header-border: var(--color-grey-line);
+	--header-border: var(--color-grey-line-light);
 	--header-accent: var(--color-grey);
 	--header-height: 7.2rem;
 
 	// Dropdown panels (hm-core src/menus): white card under the item.
 	--dropdown-bg: var(--color-white);
 	--dropdown-color: var(--color-black);
-	--dropdown-border: 1px solid var(--color-grey-line);
+	--dropdown-border: 1px solid var(--color-grey-line-light);
 	--dropdown-radius: 1.2rem;
 	--dropdown-padding: 1.4rem;
 	--dropdown-gap: 0.8rem;
@@ -30,7 +30,6 @@
 	z-index: 1000;
 	background-color: var(--header-bg);
 	color: var(--header-fg);
-	border-bottom: 1px solid var(--header-border);
 
 	&__inner {
 		display: flex;
@@ -192,6 +191,10 @@
 		display: none;
 	}
 
+	.site-header__inner {
+		border-bottom: 1px solid var(--header-border);
+	}
+
 	.site-nav__list {
 		display: flex;
 		align-items: center;
@@ -200,6 +203,14 @@
 		> li {
 			position: relative;
 			padding: 0 var(--default-space-m);
+			&:first-child{
+				padding-left: 0 !important;
+			}
+			// Last Item: hm-core's morph JS appends li.dropdown-backdrop after it.
+			&.menu-item:last-child,
+			&.menu-item:has(+ .dropdown-backdrop) {
+				padding-right: 0 !important;
+			}
 		}
 	}
 
@@ -211,6 +222,7 @@
 			gap: var(--default-space-s);
 			height: auto;
 			padding: var(--default-space-m) 0;
+			border-bottom: 1px solid var(--header-border);
 		}
 
 		.site-nav, .site-nav__list{

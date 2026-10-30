@@ -1,0 +1,8 @@
+// ---------
+// 0-settings
+// Layout tokens read by hm-starter (base/_grid.scss).
+
+:root {
+	--grid-gap: calc(var(--default-space) * 4);     // gutter between columns (.grid > [class*=grid-col])
+	--grid-row-gap: calc(var(--default-space) * 4); // space between rows when columns wrap
+}

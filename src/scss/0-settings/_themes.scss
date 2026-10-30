@@ -14,7 +14,7 @@ body {
 
 /* Block themes (spacing from hm-starter base/_sections.scss; colours here)
 ========================================================================== */
-@include sections.collapse("none", "dark", "light");
+@include sections.collapse("none", "dark", "grey");
 
 .theme--dark {
 	background-color: var(--color-black);
@@ -23,11 +23,36 @@ body {
 	--btn-primary-bg: var(--color-white);
 	--btn-primary-bg-hover: var(--color-grey-light);
 	--btn-primary-color: var(--color-black);
+	--cards-grid-border: 1px solid var(--color-grey-line-dark);
+	.card{
+		color: var(--color-grey-white);
+		--field-color: var(--color-white);
+		--btn-primary-bg: var(--color-white);
+		--btn-primary-bg-hover: var(--color-grey-light);
+		--btn-primary-color: var(--color-black);
+		--card-box-bg: var(--color-grey-dark);
+		--card-box-color: var(--color-white);
+		--card-box-border: 1px solid var(--color-white);
+		--card-box-border: 1px solid var(--color-grey);
+	}
 }
 
-.theme--light {
-	background-color: var(--color-grey-light);
+.theme--none, .theme--grey {
 	color: var(--color-black);
+	--cards-grid-border: 1px solid var(--color-grey-line-light);
+	.card{
+		--card-box-bg: var(--color-grey-light);
+		--card-box-color: var(--color-black);
+		--card-box-border: 1px solid var(--color-grey-line-light);
+	}
+}
+
+.theme--none, .theme--grey {
+	background-color: var(--color-white);
+}
+
+.theme--grey{
+	background: radial-gradient(circle at 85% 15%, rgba(220, 214, 207, .55), transparent 26%), linear-gradient(135deg, #ece8e3 0%, #faf8f5 48%, #ddd6ce 100%);
 }
 
 /* Page themes (header colours)

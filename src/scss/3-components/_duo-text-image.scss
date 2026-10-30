@@ -1,0 +1,34 @@
+// ---------
+// 3-components
+// Text & image (hm/duo-text-image): the image takes its half of the grid (.grid-col-6) at full width;
+// its height comes from the "Image ratio" setting (hm-starter base/_helpers.scss: .image_r_{ratio}).
+// The text sits at the top or in the middle of that height: "Text vertical alignment" (.text.center).
+
+.flexi_content--duo-text-image {
+	.grid {
+		align-items: flex-start;
+	}
+
+	.text.center {
+		align-self: center;
+	}
+
+	.image {
+		figure {
+			width: 100%;
+			margin: 0;
+			overflow: hidden;
+		}
+
+		picture,
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		img {
+			object-fit: cover; // fill the ratio, crop what overflows
+		}
+	}
+}

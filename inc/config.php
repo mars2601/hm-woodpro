@@ -10,13 +10,16 @@ add_filter( 'hm/config', function ( array $config ) {
 	$config['themes']     = [
 		'none'  => 'None',
 		'dark'  => 'Black',
-		'light' => 'Grey',
+		'grey'  => 'Grey',
 	];
 	$config['icons_path']   = 'assets/icons';
 	$config['field_labels'] = 'static'; // labels above the fields (Figma forms)
 	$config['dropdown_icon'] = 'carret-down'; // ⌄ on Items with SubItems, text and button (hm-core menus)
 	$config['dropdown_open'] = 'hover';       // open dropdowns on hover (click still works, touch screens click)
 	$config['dropdown_morph'] = true;         // one box slides from one Item's panel to the next
+	$config['duo_single_image'] = true;       // Text & image: one image, no carousel
+	$config['cards_layout']   = true;         // Cards: Alignment + Content inside boxes settings (src/scss/3-components/_cards.scss)
+	$config['intro_extras']   = true;         // block intros: upper title, paragraph, divider (src/scss/3-components/_intro.scss)
 	return $config;
 } );
 

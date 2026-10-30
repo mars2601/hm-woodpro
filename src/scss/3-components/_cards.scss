@@ -1,0 +1,85 @@
+// ---------
+// 3-components
+// Cards block (hm/cards, `cards_layout` on): Alignment and Content inside boxes settings.
+//   .flexi_content--align-center  intro and card content centred
+//   .flexi_content--boxed         each card is a box: image and content inside a framed card
+
+.flexi_content--cards {
+		--card-box-radius: 1.2rem;
+		--card-box-gap: var(--default-space-s);
+		--card-box-padding: var(--default-space);
+}
+
+// Same height per row: the grid cells (.card--wrapper) stretch to the tallest, the card fills its
+// cell and its body takes the rest, so the buttons line up at the bottom.
+.flexi_content--cards {
+	// Wrapper around .grid (its negative margins would push a border past the container).
+	// Lines above and below the cards: --cards-grid-border, set it in a theme (0-settings/_themes.scss).
+	// Default in the fallback, not on the block: a theme class on the same element can override it.
+	.cards__grid {
+		border-top: var(--cards-grid-border, 1px solid var(--color-grey-line-light));
+		border-bottom: var(--cards-grid-border, 1px solid var(--color-grey-line-light));
+		padding: calc(var(--default-space) * 2) 0;
+	}
+
+	.card {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.card__header{
+		margin-bottom: var(--default-space);
+	}
+
+	.card__body {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		gap: var(--default-space);
+	}
+
+	.card__actions {
+		margin-top: auto;
+	}
+
+	.links{
+		margin-top: calc(var(--default-space) * 3);
+	}
+}
+
+// Alignment: center.
+.flexi_content--align-center {
+	.cards__grid {
+		border: none;
+	}
+	.intro {
+		align-items: center;
+		text-align: center;
+	}
+
+	.card__body,
+	.card__header {
+		text-align: center;
+	}
+
+	.card__actions,
+	.characteristics {
+		justify-content: center;
+	}
+}
+
+// Content inside boxes.
+.flexi_content--boxed {
+	--grid-gap: calc(var(--default-space) * 2);     // gutter between columns (.grid > [class*=grid-col])
+	--grid-row-gap: calc(var(--default-space) * 2);
+	.card {
+		gap: var(--card-box-gap);
+		padding: var(--card-box-padding);
+		border: var(--card-box-border);
+		border-radius: var(--card-box-radius);
+		background-color: var(--card-box-bg);
+		color: var(--card-box-color);
+		overflow: hidden;
+	}
+}

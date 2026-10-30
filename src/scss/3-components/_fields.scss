@@ -6,7 +6,7 @@
 
 :root {
 	--field-color: var(--color-black);
-	--field-line: var(--color-grey-line);
+	--field-line: var(--color-grey-line-light);
 	--field-accent: var(--color-black);
 	--field-filled-bg: var(--color-white);
 	--field-error: var(--color-red);
@@ -15,8 +15,8 @@
 	--field-dropdown-color: var(--color-black);
 	--field-gap: 1.6rem;
 
-	--field-border: 1px solid var(--color-grey-line);
-	--field-border-bottom: 1px solid var(--color-grey-line);
+	--field-border: 1px solid var(--color-grey-line-light);
+	--field-border-bottom: 1px solid var(--color-grey-line-light);
 	--field-radius: 999px;
 	--field-bg: var(--color-white);
 	--field-padding: 1rem 1.8rem;

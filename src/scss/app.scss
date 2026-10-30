@@ -7,9 +7,13 @@
 @use '0-settings/colors';
 @use '0-settings/fonts';
 @use '0-settings/themes';
+@use '0-settings/layout';
 
 //----- 3-components
 @use '3-components/btn';
 @use '3-components/header';
 @use '3-components/fields';
 @use '3-components/image-only';
+@use '3-components/intro';
+@use '3-components/cards';
+@use '3-components/duo-text-image';

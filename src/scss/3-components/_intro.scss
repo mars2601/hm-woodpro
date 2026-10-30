@@ -1,0 +1,43 @@
+// ---------
+// 3-components
+// Block intro (hm-core intro(), `intro_extras` on): upper title, title, paragraph, divider.
+// The divider is a bar between the intro and the content that follows.
+
+.intro {
+	--intro-kicker-size: 1.4rem;
+	--intro-kicker-spacing: .12em;
+	--intro-gap: var(--default-space-s);
+	--intro-divider-width: 40px;
+	--intro-divider-height: 2px;
+	--intro-divider-color: 	linear-gradient(90deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+	--intro-divider-space: var(--default-space);
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--intro-gap);
+	margin-bottom: calc(var(--default-space) * 2);
+
+	> * {
+		margin: 0;
+	}
+
+	&__kicker {
+		font-size: var(--intro-kicker-size, 1.4rem);
+		font-weight: 600;
+		letter-spacing: var(--intro-kicker-spacing, .12em);
+		text-transform: uppercase;
+	}
+
+	&__divider {
+		display: block;
+		width: var(--intro-divider-width);
+		height: var(--intro-divider-height);
+		margin-top: calc(var(--intro-divider-space) - var(--intro-gap));
+		background: var(--intro-divider-color);
+	}
+}
+
+// Upper title on its own in a text area (text & image…): space before the title.
+.text:not(.intro) > .intro__kicker {
+	margin: 0 0 var(--intro-gap, var(--default-space-s));
+}
